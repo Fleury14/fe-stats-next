@@ -1,9 +1,9 @@
-import Image from "next/image";
+import LeaderboardFront from "./ui/leaderboard-front/leaderboard-front";
 
 export default function Home() {
   return (
     <div>
-      <p>Content!</p>
+      <LeaderboardFront />
     </div>
      );
 }
