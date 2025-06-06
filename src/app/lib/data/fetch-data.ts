@@ -1,4 +1,4 @@
-import { LeaderboardResponse } from "../interfaces";
+import { CategoryData, LeaderboardResponse } from "../interfaces";
 import { NextApiResponse } from 'next';
 
 async function fetchLeaderboard() {
@@ -18,8 +18,8 @@ async function fetchActiveRaces() {
         console.error('Error during Active Races fetch');
         return null;
     } else {
-        const result = response.json();
-        return result;
+        const result:Promise<CategoryData> = response.json();
+        return (await result).current_races;
     }
 }
 

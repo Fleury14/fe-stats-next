@@ -2,10 +2,11 @@
 
 import { fetchActiveRaces } from '@/app/lib/data/fetch-data';
 import {useState, useEffect} from 'react';
+import { Race } from '@/app/lib/interfaces';
 
 export default function ActiveRacesFront() {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Race[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {

@@ -99,4 +99,4 @@ interface CategoryData {
     emotes: string;
 }
 
-export type { Leaderboard, LeaderboardResponse }
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race }
