@@ -32,4 +32,71 @@ interface LeaderboardResponse {
     leaderboards: Leaderboard[]
 }
 
+interface Race {
+    version: number;
+    name: string;
+    status: {
+        value: string;
+        verbose_value: string;
+        help_text: string;
+    };
+    url: string;
+    data_url: string;
+    websocket_url: string;
+    websocket_bot_url: string;
+    websocket_oauth_url: string;
+    goal: {
+        name: string;
+        custom: boolean;
+    };
+    info: string;
+    info_bot: string;
+    info_user: string;
+    entrants_count: number;
+    entrants_count_finished: number;
+    entrants_count_inactive: number;
+    entrants: User[];
+    opened_at: Date;
+    start_delay: Date;
+    started_at: Date;
+    ended_at: Date;
+    cancelled_at: Date;
+    ranked: boolean;
+    unlisted: boolean;
+    time_limit: number;
+    time_limit_auto_complete: boolean;
+    require_even_teams: boolean;
+    streaming_required: boolean;
+    auto_start: boolean;
+    opened_by: User;
+    monitors: User[];
+    recordable: boolean;
+    recorded: boolean;
+    recorded_by: User;
+    disqualify_unready: boolean;
+    allow_comments: boolean;
+    hide_comments: boolean;
+    hide_entrants: boolean;
+    chat_restricted: boolean;
+    allow_prerace_chat: boolean;
+    allow_midrace_chat: boolean;
+    allow_non_entrant_chat: boolean;
+    chat_message_delay: number;
+}
+
+interface CategoryData {
+    name: string;
+    short_name: string;
+    slug: string;
+    data_url: string;
+    image: string;
+    info: string;
+    streaming_required: boolean;
+    owners: User[];
+    moderators: User;
+    goals: string[];
+    current_races: Race[];
+    emotes: string;
+}
+
 export type { Leaderboard, LeaderboardResponse }
