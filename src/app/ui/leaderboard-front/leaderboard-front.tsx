@@ -18,8 +18,6 @@ export default function LeaderboardFront() {
         fetchData();
     }, []);
 
-    console.log('data', data);
-
     const colors = [
         "text-fuchsia-200",
         "text-indigo-200",

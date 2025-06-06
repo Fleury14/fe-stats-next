@@ -12,4 +12,15 @@ async function fetchLeaderboard() {
     }
 }
 
-export { fetchLeaderboard }
+async function fetchActiveRaces() {
+    const response: Response = await fetch('https://racetime.gg/ff4fe/data');
+    if (!response.ok) {
+        console.error('Error during Active Races fetch');
+        return null;
+    } else {
+        const result = response.json();
+        return result;
+    }
+}
+
+export { fetchLeaderboard, fetchActiveRaces }
