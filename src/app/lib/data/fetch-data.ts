@@ -1,5 +1,4 @@
-import { CategoryData, LeaderboardResponse } from "../interfaces";
-import { NextApiResponse } from 'next';
+import { CategoryData, LeaderboardResponse, RecentRaceResponse } from "../interfaces";
 
 async function fetchLeaderboard() {
     const response: Response = await fetch(`https://racetime.gg/ff4fe/leaderboards/data`);
@@ -23,4 +22,15 @@ async function fetchActiveRaces() {
     }
 }
 
-export { fetchLeaderboard, fetchActiveRaces }
+async function fetchLastFiveRaces() {
+    const response: Response = await fetch('https://racetime.gg/ff4fe/races/data');
+    if (!response.ok) {
+        console.error('Error during Last Five Races fetch');
+        return null;
+    } else {
+        const result:Promise<RecentRaceResponse> = response.json();
+        return (await result).races;
+    }
+}
+
+export { fetchLeaderboard, fetchActiveRaces, fetchLastFiveRaces }

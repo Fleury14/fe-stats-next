@@ -99,4 +99,10 @@ interface CategoryData {
     emotes: string;
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race }
+interface RecentRaceResponse {
+    count: number;
+    pages: number;
+    races: Race[];
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse }

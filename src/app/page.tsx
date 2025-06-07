@@ -1,5 +1,6 @@
 import ActiveRacesFront from "./ui/active-races-front/active-races";
 import LeaderboardFront from "./ui/leaderboard-front/leaderboard-front";
+import RecentRacesFront from "./ui/recent-races-front/recent-races-front";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <div className="col-span-9">
         <div className="flex flex-col">
           <ActiveRacesFront />
+          <RecentRacesFront />
         </div>
       </div>
       
