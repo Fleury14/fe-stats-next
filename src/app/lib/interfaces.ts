@@ -124,4 +124,10 @@ interface RecentRaceResponse {
     races: Race[];
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant }
+interface PlayerRacesResponse {
+    count: number;
+    num_pages: number;
+    races: Race[];
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse }

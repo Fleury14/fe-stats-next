@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from "react";
-
 import { useParams  } from "next/navigation";
 import { Race } from "@/app/lib/interfaces";
 import { fetchSingleRaceData } from "@/app/lib/data/fetch-data";
@@ -23,8 +22,6 @@ export default function Page() {
         fetchData();
     }, [id]);
     
-    console.log('data', data)
-
     return (
         <div>
             {data === null ? (
