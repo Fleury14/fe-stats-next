@@ -1,0 +1,27 @@
+.race-results-container {
+    width: 80%;
+    margin-left: 10%;
+}
+
+@media only screen and (max-width: 500px) {
+    .race-results-container {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.results-place {
+    width: 80px;
+}
+
+.race-cell { 
+    width: 150px;
+}
+
+.race-cell-mid {
+    width: 100px;
+}
+
+.race-cell-right {
+    width: 200px;
+}

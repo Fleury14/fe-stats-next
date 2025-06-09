@@ -55,10 +55,10 @@ interface Race {
     entrants_count: number;
     entrants_count_finished: number;
     entrants_count_inactive: number;
-    entrants: User[];
-    opened_at: Date;
+    entrants: Entrant[];
+    opened_at: string;
     start_delay: Date;
-    started_at: Date;
+    started_at: string;
     ended_at: Date;
     cancelled_at: Date;
     ranked: boolean;
@@ -84,6 +84,25 @@ interface Race {
     chat_message_delay: number;
 }
 
+interface Entrant {
+    finish_time: string;
+    finished_at: Date;
+    has_comment: boolean;
+    place: number;
+    place_ordinal: string;
+    score: number | null;
+    score_change: number;
+    status: {
+        value: string;
+        verbose_value: string;
+        help_text: string;
+    }
+    stream_live: boolean;
+    stream_override: boolean;
+    team: string | null;
+    user: User;
+}
+
 interface CategoryData {
     name: string;
     short_name: string;
@@ -105,4 +124,4 @@ interface RecentRaceResponse {
     races: Race[];
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse }
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant }
