@@ -10,7 +10,7 @@ export default function Navbar() {
                 <Link href="/"><p className="ml-3 mr-3 mt-3">Main</p></Link>
                 <p className="ml-3 mr-3 mt-3">Races</p>
                 <p className="ml-3 mr-3 mt-3">Players</p>
-                <p className="ml-3 mr-3 mt-3">AFC</p>
+                <Link href="/afc"><p className="ml-3 mr-3 mt-3">AFC</p></Link>
             </div>
         </div>
     );

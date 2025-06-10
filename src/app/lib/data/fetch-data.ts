@@ -1,4 +1,4 @@
-import { Race, CategoryData, LeaderboardResponse, RecentRaceResponse, User, PlayerRacesResponse } from "../interfaces";
+import { Race, CategoryData, LeaderboardResponse, RecentRaceResponse, PlayerRacesResponse } from "../interfaces";
 
 async function fetchLeaderboard() {
     const response: Response = await fetch(`https://racetime.gg/ff4fe/leaderboards/data`);

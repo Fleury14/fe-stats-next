@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams  } from "next/navigation";
-import { PlayerRacesResponse, User } from "@/app/lib/interfaces";
+import { PlayerRacesResponse } from "@/app/lib/interfaces";
 import { fetchUserData } from "@/app/lib/data/fetch-data";
 
 export default function Page() {
