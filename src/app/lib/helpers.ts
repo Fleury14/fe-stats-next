@@ -1,5 +1,5 @@
 function parseRTTimeString(timeString: string) {
-    if (timeString === "") {
+    if (timeString === "" || timeString === null) {
         return ""
     }
 

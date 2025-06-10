@@ -130,4 +130,24 @@ interface PlayerRacesResponse {
     races: Race[];
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse }
+interface Schedule {
+    Date: string;
+    "Player 1": string;
+    "Player 2": string;
+    "Game #": string;
+    Winner: string;
+    "Player 1 Time": string;
+    "Player 2 Time": string;
+    "Player 1 Team": string;
+    "Player 2 Team": string;
+    Channel: string;
+    Restreamer: string;
+    Comms: string;
+    Tracker: string;
+}
+
+interface ScheduleSheet {
+    data: Schedule[];
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, ScheduleSheet, Schedule }
