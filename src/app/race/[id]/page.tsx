@@ -21,6 +21,8 @@ export default function Page() {
 
         fetchData();
     }, [id]);
+
+    console.log('huh', data)
     
     return (
         <div>
@@ -34,7 +36,7 @@ export default function Page() {
                     entrants={data.entrants}
                     open_time={data.opened_at}
                     start_time={data.started_at}
-                    author={data.opened_by.name}
+                    author={data.opened_by ? data.opened_by.name : "Tellah's Library"}
                 />
             )}
             
