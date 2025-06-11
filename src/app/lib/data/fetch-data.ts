@@ -33,6 +33,17 @@ async function fetchLastFiveRaces() {
     }
 }
 
+async function fetchPageRaceData(page: number) {
+    const response: Response = await fetch(`https://racetime.gg/ff4fe/races/data?page=${page}`);
+    if (!response.ok) {
+        console.error('Error during Last Five Races fetch');
+        return null;
+    } else {
+        const result:Promise<RecentRaceResponse> = response.json();
+        return (await result).races;
+    }
+}
+
 async function fetchSingleRaceData(id: string) {
     const response: Response = await fetch(`https://racetime.gg/ff4fe/${id}/data`);
     if (!response.ok) {
@@ -55,4 +66,4 @@ async function fetchUserData(id: string) {
     }
 }
 
-export { fetchLeaderboard, fetchActiveRaces, fetchLastFiveRaces, fetchSingleRaceData, fetchUserData }
+export { fetchLeaderboard, fetchActiveRaces, fetchLastFiveRaces, fetchSingleRaceData, fetchUserData, fetchPageRaceData }

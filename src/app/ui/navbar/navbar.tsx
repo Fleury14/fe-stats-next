@@ -8,7 +8,7 @@ export default function Navbar() {
             </div>
             <div className="flex">
                 <Link href="/"><p className="ml-3 mr-3 mt-3">Main</p></Link>
-                <p className="ml-3 mr-3 mt-3">Races</p>
+                <Link href="/races" className="ml-3 mr-3 mt-3">Races</Link>
                 <p className="ml-3 mr-3 mt-3">Players</p>
                 <Link href="/afc"><p className="ml-3 mr-3 mt-3">AFC</p></Link>
             </div>
