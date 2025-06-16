@@ -20,7 +20,7 @@ export default function Page() {
         fetchData();
     }, [page]);
 
-    console.log('race page data', data);
+    // console.log('race page data', data);
 
     function prevPage() {
         if (page === 1) {
@@ -39,7 +39,8 @@ export default function Page() {
                 <button className="ml-10 bg-blue-900 p-3" onClick={() => setPage(page + 1)}><ArrowRightIcon className="size-6" /></button>
             </div>
             <div className="race-list-container">
-                <RaceList races={data} />
+                {data.length > 0 && <RaceList races={data} /> }
+               
             </div>
             
         </div>
