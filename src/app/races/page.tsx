@@ -39,8 +39,7 @@ export default function Page() {
                 <button className="ml-10 bg-blue-900 p-3" onClick={() => setPage(page + 1)}><ArrowRightIcon className="size-6" /></button>
             </div>
             <div className="race-list-container">
-                {data.length > 0 && <RaceList races={data} /> }
-               
+                <RaceList races={data} />
             </div>
             
         </div>

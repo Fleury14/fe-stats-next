@@ -22,17 +22,6 @@ async function fetchActiveRaces() {
     }
 }
 
-// async function fetchGoals() {
-//     const response: Response = await fetch('https://racetime.gg/ff4fe/data');
-//     if (!response.ok) {
-//         console.error('Error during Goals fetch fetch');
-//         return null;
-//     } else {
-//         const result:Promise<CategoryData> = response.json();
-//         return (await result).goals;
-//     }
-// }
-
 async function fetchLastFiveRaces() {
     const response: Response = await fetch('https://racetime.gg/ff4fe/races/data');
     if (!response.ok) {
