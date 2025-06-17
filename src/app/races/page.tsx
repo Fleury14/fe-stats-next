@@ -20,7 +20,7 @@ export default function Page() {
         fetchData();
     }, [page]);
 
-    console.log('race page data', data);
+    // console.log('race page data', data);
 
     function prevPage() {
         if (page === 1) {
