@@ -150,4 +150,27 @@ interface ScheduleSheet {
     data: Schedule[];
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, ScheduleSheet, Schedule }
+interface PlayerDetailResponse {
+    id: string;
+    full_name: string;
+    name: string;
+    discriminator: string;
+    avatar: string;
+    pronouns: string;
+    flair: string;
+    twitch_name: string;
+    twitch_display_name: string;
+    twitch_channel: string;
+    can_moderate: boolean;
+    stats: {
+        joined: number;
+        first: number;
+        second: number;
+        third: number;
+        forfeits: number;
+    }
+    teams: string[];
+
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, ScheduleSheet, Schedule, PlayerDetailResponse }
