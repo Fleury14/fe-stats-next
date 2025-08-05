@@ -23,6 +23,7 @@ export default function PlayerDetail({ races, details }: { races: Race[], detail
                     <p>Forfeits: <span className="font-bold text-red-200">{details.stats.forfeits}</span></p>
                 </div>
             </div>
+            <div className="player-detail-bottom"></div>
         </div>
     );
 

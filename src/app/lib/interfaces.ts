@@ -173,4 +173,17 @@ interface PlayerDetailResponse {
 
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, ScheduleSheet, Schedule, PlayerDetailResponse }
+interface TLPlayerRaceResponse {
+    raceId: number;
+    roomName: string;
+    raceType: string;
+    raceHost: string;
+    flagset: string;
+    seedId: number;
+    metadata: {
+        Goal: string;
+        Description: string;
+    }
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse }
