@@ -183,6 +183,7 @@ interface TLPlayerRaceResponse {
     metadata: {
         Goal: string;
         Description: string;
+        EntrantsCount: string;
     }
 }
 
