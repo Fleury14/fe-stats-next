@@ -1,0 +1,9 @@
+.player-detail-bottom {
+    display: flex;
+}
+
+@media only screen and (max-width: 560px) {
+    .player-detail-bottom {
+        flex-direction: column;
+    }
+}

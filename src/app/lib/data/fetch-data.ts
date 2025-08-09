@@ -1,4 +1,4 @@
-import { Race, CategoryData, LeaderboardResponse, RecentRaceResponse, PlayerRacesResponse } from "../interfaces";
+import { Race, CategoryData, LeaderboardResponse, RecentRaceResponse, PlayerRacesResponse, PlayerDetailResponse } from "../interfaces";
 
 async function fetchLeaderboard() {
     const response: Response = await fetch(`https://racetime.gg/ff4fe/leaderboards/data`);
@@ -66,4 +66,15 @@ async function fetchUserData(id: string) {
     }
 }
 
-export { fetchLeaderboard, fetchActiveRaces, fetchLastFiveRaces, fetchSingleRaceData, fetchUserData, fetchPageRaceData }
+async function fetchUserDetails(id: string) {
+    const response: Response = await fetch(`https://racetime.gg/user/${id}/data`);
+    if (!response.ok) {
+        console.error('Error returning user detail: ' + id);
+        return null;
+    } else {
+        const result:Promise<PlayerDetailResponse> = response.json();
+        return result;
+    }
+}
+
+export { fetchLeaderboard, fetchActiveRaces, fetchLastFiveRaces, fetchSingleRaceData, fetchUserData, fetchPageRaceData, fetchUserDetails }
