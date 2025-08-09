@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams  } from "next/navigation";
-import { PlayerDetailResponse, PlayerRacesResponse, TLPlayerRaceResponse } from "@/app/lib/interfaces";
+import { PlayerDetailResponse, TLPlayerRaceResponse } from "@/app/lib/interfaces";
 import { fetchUserDetails } from "@/app/lib/data/fetch-data";
 import PlayerDetail from "@/app/ui/player-detail/player-detail";
 import { fetchTLUserRaces } from "@/app/lib/data/fetch-tellah-data";

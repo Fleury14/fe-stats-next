@@ -1,4 +1,4 @@
-import { PlayerDetailResponse, Race, TLPlayerRaceResponse } from "@/app/lib/interfaces";
+import { PlayerDetailResponse, TLPlayerRaceResponse } from "@/app/lib/interfaces";
 import Link from 'next/link';
 
 export default function PlayerDetail({ details, TLRaces }: { details: PlayerDetailResponse, TLRaces: TLPlayerRaceResponse[] }) {
