@@ -1,4 +1,5 @@
 import { Leaderboard } from "@/app/lib/interfaces";
+import Link from 'next/link';
 import "./players-full.css";
 
 export default function PlayersFull({ goal, leaderboards, setGoal }: { goal: number, leaderboards: Leaderboard[], setGoal: (goal: number) => void }) {
@@ -56,10 +57,12 @@ export default function PlayersFull({ goal, leaderboards, setGoal }: { goal: num
             <div className="full-leaderboard-bottom mt-5">
                 {leaderboards[goal].rankings.map((rank, index) => {
                     return (
-                        <div className={`flex justify-between ${getColor((index + 1) / leaderboards[goal].rankings.length)}`} key={`${rank.user.name}`}>
-                            <p>{rank.user.name}</p>
-                            <p>{rank.score}</p>
-                        </div>
+                        <Link key={`${rank.user.name}`} href={`/player/${rank.user.id}`}>
+                            <div className={`flex justify-between ${getColor((index + 1) / leaderboards[goal].rankings.length)}`}>
+                                <p>{rank.user.name}</p>
+                                <p>{rank.score}</p>
+                            </div>
+                        </Link>
                     )
                 })}
             </div>
