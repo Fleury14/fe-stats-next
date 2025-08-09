@@ -3,6 +3,7 @@
 import { fetchLeaderboard } from '@/app/lib/data/fetch-data';
 import { Leaderboard } from '@/app/lib/interfaces';
 import {useState, useEffect} from 'react';
+import Link from "next/link";
 
 
 export default function LeaderboardFront() {
@@ -61,10 +62,12 @@ export default function LeaderboardFront() {
                     <p className="text-center font-bold text-xl m-5">{data[0].goal}</p>
                     {data[0].rankings.map((rank, index) => {
                         return (
-                            <div className={`flex justify-between ${getColor((index + 1) / data[0].rankings.length)}`} key={`${rank.user.name}`}>
-                                <p>{rank.user.name}</p>
-                                <p>{rank.score}</p>
-                            </div>
+                            <Link key={`${rank.user.name}`} href={`/player/${rank.user.id}`}>
+                                <div className={`flex justify-between ${getColor((index + 1) / data[0].rankings.length)}`}>
+                                    <p>{rank.user.name}</p>
+                                    <p>{rank.score}</p>
+                                </div>
+                            </Link>
                         )
                     })}
                 </div>
