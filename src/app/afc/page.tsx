@@ -14,13 +14,13 @@ useEffect(() => {
     download: true,
     header: true,
     complete: (results: ScheduleSheet) => {
-      console.log(' zz6 schedule results', results);
+      // console.log(' zz6 schedule results', results);
       setSchedule(results.data);
     }
   })
 }, []);
 
-console.log('afc data', schedule);
+// console.log('afc data', schedule);
 
 if (schedule === null) return (
   <p>No data yet...</p>
