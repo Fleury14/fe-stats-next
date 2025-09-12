@@ -33,13 +33,11 @@ export default function PlayerDetail({ details, TLRaces }: { details: PlayerDeta
                             if (!me) return null;
                             const gain = me.entrantMetadata.scoreChange.charAt(0) !== "-";
                             const unranked = isNaN(parseInt(me.entrantMetadata.score))
-                            console.log('tl races', race)
+                            
                             return (
                                 <div key={race.roomName}>
                                     <div className="flex justify-between">
-                                        <div>
-                                            <p className="text-orange-200">{race.roomName}</p>
-                                        </div>
+                                        <p className="text-orange-200">{race.roomName}</p>
                                         <div>
                                             <p>{unranked ? 1500 : me.entrantMetadata.score} =&gt; <span className={gain ? "text-emerald-200" : "text-red-200"}>{gain && "+"}{me?.entrantMetadata.scoreChange}</span> =&gt; <span className="text-cyan-200">{(unranked ? 1500 : parseInt(me.entrantMetadata.score)) + parseInt(me.entrantMetadata.scoreChange) }</span></p>
                                         </div>
@@ -53,10 +51,14 @@ export default function PlayerDetail({ details, TLRaces }: { details: PlayerDeta
                     <h2 className="text-center m-5 text-xl">Recent Races</h2>
                     <div className="flex flex-col">
                         {TLRaces.map(race => {
+                            const endDate = new Date(race.endedAt)
                             return (
                                 <Link key={race.roomName} href={`/race/${race.roomName}`}>
                                     <div key={race.roomName} className="flex flex-col m-3 p-3 hover:bg-slate-800">
-                                        <p className="text-xl font-bold text-yellow-200">{race.roomName}</p> 
+                                        <div className="flex justify-between">
+                                            <p className="text-xl font-bold text-yellow-200">{race.roomName}</p>
+                                            <p>{endDate.toLocaleDateString()} {endDate.toLocaleTimeString()}</p> 
+                                        </div>
                                         <p>{race.metadata.Description}</p>
                                         <div className="flex justify-between">
                                             <p>Entrants: {race.metadata.EntrantsCount}</p>
