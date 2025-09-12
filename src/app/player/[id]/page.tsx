@@ -15,8 +15,8 @@ export default function Page() {
     const [userRaces, setUserRaces] = useState<TLPlayerRaceResponse[] | null>(null)
 
      useEffect(() => {
-        const fetchRaces = async (description: string) => {
-            const TLRaces = await fetchTLUserRaces(description);
+        const fetchRaces = async (id: string) => {
+            const TLRaces = await fetchTLUserRaces(id);
             if (TLRaces !== null) setUserRaces(TLRaces)
         }
 
@@ -24,7 +24,7 @@ export default function Page() {
             const userDetails = await fetchUserDetails(id);
             if (userDetails !== null) {
                 setDetails(userDetails);
-                fetchRaces(userDetails.name)
+                fetchRaces(id)
             }
         }
 

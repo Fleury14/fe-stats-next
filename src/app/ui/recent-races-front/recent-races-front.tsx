@@ -28,7 +28,7 @@ export default function RecentRacesFront() {
                                 <p className="text-xl font-bold text-yellow-200">{race.name.slice(6)}</p>
                                 <div className="flex">
                                     <p className="mr-10">Entrants: {race.entrants_count}</p>
-                                    <p>Opened at: {new Date(race.opened_at).toLocaleTimeString()}</p>
+                                    <p>Opened at: {new Date(race.opened_at).toLocaleTimeString()} on {new Date(race.opened_at).toLocaleDateString()}</p>
                                 </div>
                                 <p>Goal: {race.goal.name}</p>
                             </div>
