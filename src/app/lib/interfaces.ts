@@ -180,6 +180,7 @@ interface TLPlayerRaceResponse {
     raceHost: string;
     flagset: string;
     seedId: number;
+    endedAt: string;
     entrants: TLEntrant[];
     metadata: {
         Goal: string;
