@@ -26,7 +26,7 @@ export default function PlayerDetail({ details, TLRaces }: { details: PlayerDeta
             </div>
             <div className="player-detail-bottom grid grid-cols-3 gap-4">
                 <div>
-                    <h2 className="text-center text-xl m-5">Score Changes</h2>
+                    <h2 className="text-center text-xl m-5 font-bold">Score Changes</h2>
                     <div className="flex flex-col">
                         {TLRaces.map(race => {
                             const me = race.entrants.find(entrant => entrant.name === details.name);
@@ -48,7 +48,7 @@ export default function PlayerDetail({ details, TLRaces }: { details: PlayerDeta
                     </div>
                 </div>
                 <div className="col-span-2">
-                    <h2 className="text-center m-5 text-xl">Recent Races</h2>
+                    <h2 className="text-center m-5 text-xl font-bold">Recent Races</h2>
                     <div className="flex flex-col">
                         {TLRaces.map(race => {
                             const endDate = new Date(race.endedAt)
