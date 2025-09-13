@@ -1,7 +1,7 @@
 import { TLPlayerRaceResponse } from "../interfaces";
 
-async function fetchTLUserRaces(description: string) {
-    const response: Response = await fetch(`https://free-enterprise-info-api.herokuapp.com/api/Races?offset=0&limit=10&description=${description}`);
+async function fetchTLUserRaces(id: string) {
+    const response: Response = await fetch(`https://free-enterprise-info-api.herokuapp.com/api/Racers/${id}/races?offset=0&limit=10`);
     if (!response.ok) {
         console.error('Error during User race list (TL)');
         return null;

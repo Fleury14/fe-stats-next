@@ -180,10 +180,25 @@ interface TLPlayerRaceResponse {
     raceHost: string;
     flagset: string;
     seedId: number;
+    endedAt: string;
+    entrants: TLEntrant[];
     metadata: {
         Goal: string;
         Description: string;
         EntrantsCount: string;
+    }
+}
+
+interface TLEntrant {
+    name: string;
+    twitchName: string;
+    racetimeId: string;
+    finishTime: string;
+    placement: number;
+    entrantMetadata: {
+        score: string;
+        comment: string;
+        scoreChange: string;
     }
 }
 

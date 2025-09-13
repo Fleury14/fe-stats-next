@@ -55,15 +55,18 @@ export default function LeaderboardFront() {
         return colors[6];
     }
 
+    // for when i want to change what is the highlighted leaderboard
+    const FRONT_PAGE_INDEX = 1
+
     return (
         <div className="p-5">
             { data.length === 0 ? <div /> : (
                 <div className='flex flex-col'>
-                    <p className="text-center font-bold text-xl m-5">{data[0].goal}</p>
-                    {data[0].rankings.map((rank, index) => {
+                    <p className="text-center font-bold text-xl m-5">{data[FRONT_PAGE_INDEX].goal}</p>
+                    {data[FRONT_PAGE_INDEX].rankings.map((rank, index) => {
                         return (
                             <Link key={`${rank.user.name}`} href={`/player/${rank.user.id}`}>
-                                <div className={`flex justify-between ${getColor((index + 1) / data[0].rankings.length)}`}>
+                                <div className={`flex justify-between ${getColor((index + 1) / data[FRONT_PAGE_INDEX].rankings.length)}`}>
                                     <p>{rank.user.name}</p>
                                     <p>{rank.score}</p>
                                 </div>
