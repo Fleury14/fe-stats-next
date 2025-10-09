@@ -32,6 +32,10 @@ interface LeaderboardResponse {
     leaderboards: Leaderboard[]
 }
 
+interface UserSearchResponse {
+    results: User[];
+}
+
 interface Race {
     version: number;
     name: string;
@@ -202,4 +206,4 @@ interface TLEntrant {
     }
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse }
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, UserSearchResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse }
