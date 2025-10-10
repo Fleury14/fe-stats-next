@@ -6,7 +6,7 @@ import "./player-selector.css";
 import { fetchTLUserSearch } from "@/app/lib/data/fetch-tellah-data";
 import MatchupData from '../matchup-data/matchup-data';
 
-export default function PlayerSelector({ selectPlayer } : { selectPlayer: (player:string) => void }) {
+export default function PlayerSelector() {
 
     const [user1, setUser1] = useState("");
     const [id1, setId1] = useState("");
