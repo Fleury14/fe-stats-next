@@ -5,6 +5,7 @@ import { User } from '@/app/lib/interfaces';
 import "./player-selector.css";
 import { fetchTLUserSearch } from "@/app/lib/data/fetch-tellah-data";
 import MatchupData from '../matchup-data/matchup-data';
+import { useDebouncedCallback } from 'use-debounce';
 
 export default function PlayerSelector() {
 
@@ -30,6 +31,14 @@ export default function PlayerSelector() {
         fetchData();
     }, [user1, user2]);
 
+    const handleChange = useDebouncedCallback((term, player) => {
+        if (player === 1) {
+            setUser1(term)
+         } else {
+            setUser2(term);
+         }
+    }, 300)
+
     return (
         <div>
             <div className="flex justify-around">
@@ -37,9 +46,9 @@ export default function PlayerSelector() {
                     <input
                         className={`ps-input-box ${id1 !== "" ? "bg-emerald-800" : ""}`}
                         type="text"
-                        value={user1}
                         name="user1"
-                        onChange={(e) => setUser1(e.target.value)} 
+                        defaultValue=""
+                        onChange={(e) => handleChange(e.target.value, 1)} 
                         />
                     {results1.map((result, index) => {
                         if (index === 9) {
@@ -64,9 +73,9 @@ export default function PlayerSelector() {
                     <input
                         className={`ps-input-box ${id2 !== "" ? "bg-emerald-800" : ""}`}
                         type="text"
-                        value={user2}
+                        defaultValue=""
                         name="user2"
-                        onChange={(e) => setUser2(e.target.value)} />
+                        onChange={(e) => handleChange(e.target.value, 2)} />
                     {results2.map((result, index) => {
                         if (index === 9) {
                             return <p key="elipses2">...</p>
