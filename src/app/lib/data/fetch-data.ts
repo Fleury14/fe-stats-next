@@ -1,4 +1,4 @@
-import { Race, CategoryData, LeaderboardResponse, RecentRaceResponse, PlayerRacesResponse, PlayerDetailResponse } from "../interfaces";
+import { Race, CategoryData, LeaderboardResponse, RecentRaceResponse, PlayerRacesResponse, PlayerDetailResponse, UserSearchResponse } from "../interfaces";
 
 async function fetchLeaderboard() {
     const response: Response = await fetch(`https://racetime.gg/ff4fe/leaderboards/data`);
@@ -77,4 +77,17 @@ async function fetchUserDetails(id: string) {
     }
 }
 
-export { fetchLeaderboard, fetchActiveRaces, fetchLastFiveRaces, fetchSingleRaceData, fetchUserData, fetchPageRaceData, fetchUserDetails }
+async function fetchUserSearch(name: string) {
+    const response: Response = await fetch(`https://racetime.gg/user/search?term=fleury`);
+    console.log('reeespooonse');
+    if (!response.ok) {
+        console.error('Error returning user search', name)
+        return "";
+    } else {
+        console.log('hmmmmm');
+        const result:Promise<UserSearchResponse> = response.json();
+        return result;
+    }
+}
+
+export { fetchLeaderboard, fetchActiveRaces, fetchLastFiveRaces, fetchSingleRaceData, fetchUserData, fetchPageRaceData, fetchUserDetails, fetchUserSearch }

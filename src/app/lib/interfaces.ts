@@ -32,6 +32,10 @@ interface LeaderboardResponse {
     leaderboards: Leaderboard[]
 }
 
+interface UserSearchResponse {
+    results: User[];
+}
+
 interface Race {
     version: number;
     name: string;
@@ -202,4 +206,26 @@ interface TLEntrant {
     }
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse }
+interface TLHead2HeadRace {
+    raceId: number;
+    roomName: string;
+    raceType: string;
+    raceHost: string;
+    flagset: string;
+    endedAt: string;
+    seedId: string;
+    entrants: TLEntrant[];
+    metadata: {
+        Goal: string;
+        Description: string;
+        EntrantsCount: string;
+    }
+}
+
+interface MatchupData {
+    wins1: number;
+    wins2: number;
+    ties: number;
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, UserSearchResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse, TLHead2HeadRace, MatchupData }

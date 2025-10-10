@@ -14,4 +14,9 @@ function parseRTTimeString(timeString: string) {
     return `${hours}:${minutes}:${seconds}`
 }
 
-export { parseRTTimeString }
+function escapeRaceTimeId(id: string):string {
+    console.log(id, id.replace("%", "%25"))
+    return id.replace("%", "%25");
+}
+
+export { parseRTTimeString, escapeRaceTimeId }

@@ -22,7 +22,7 @@ export default function Page() {
         fetchData();
     }, [id]);
 
-    console.log('huh', data)
+    // console.log('huh', data)
     
     return (
         <div>
