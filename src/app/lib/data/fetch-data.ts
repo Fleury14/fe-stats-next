@@ -78,11 +78,13 @@ async function fetchUserDetails(id: string) {
 }
 
 async function fetchUserSearch(name: string) {
-    const response: Response = await fetch(`https://racetime.gg/user/search?name=${name}`)
+    const response: Response = await fetch(`https://racetime.gg/user/search?term=fleury`);
+    console.log('reeespooonse');
     if (!response.ok) {
         console.error('Error returning user search', name)
         return "";
     } else {
+        console.log('hmmmmm');
         const result:Promise<UserSearchResponse> = response.json();
         return result;
     }

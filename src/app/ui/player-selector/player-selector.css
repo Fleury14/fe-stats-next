@@ -1,3 +1,18 @@
 .ps-input-box {
     border: 2px solid #eee;
 }
+
+.ps-input-box:hover {
+    background-color: #333;
+    color: #eee;
+}
+
+.ps-search-result {
+    transition: 0.4s all;
+}
+
+.ps-search-result:hover {
+    cursor: pointer;
+    background-color: #0155ee;
+    color: #eee
+}

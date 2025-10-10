@@ -206,4 +206,20 @@ interface TLEntrant {
     }
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, UserSearchResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse }
+interface TLHead2HeadRace {
+    raceId: number;
+    roomName: string;
+    raceType: string;
+    raceHost: string;
+    flagset: string;
+    endedAt: string;
+    seedId: string;
+    entrants: TLEntrant[];
+    metadata: {
+        Goal: string;
+        Description: string;
+        EntrantsCount: string;
+    }
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, UserSearchResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse, TLHead2HeadRace }
