@@ -14,8 +14,8 @@ export default function ParseMatchupData({id1, id2, matchupData}: {id1: string, 
         if (!entrant1 || !entrant2) {
             console.error("error in parser, unable to find entrants in matchup race:", matchup.raceId);
         } else {
-            if (entrant1.placement > entrant2.placement) wins1++;
-            if (entrant1.placement < entrant2.placement) wins2++;
+            if (entrant1.placement < entrant2.placement) wins1++;
+            if (entrant1.placement > entrant2.placement) wins2++;
             if (entrant1.placement === entrant2.placement) ties++;
         }
         
