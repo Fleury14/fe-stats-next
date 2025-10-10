@@ -23,7 +23,7 @@ async function fetchTLUserSearch(name: string) {
 }
 
 async function fetchTLH2H(id1: string, id2: string) {
-    const response: Response = await fetch(`https://free-enterprise-info-api.herokuapp.com/api/Racers/${id1}}/head-to-head/${id2}`);
+    const response: Response = await fetch(`https://free-enterprise-info-api.herokuapp.com/api/Racers/${id1}/head-to-head/${id2}`);
     if (!response.ok) {
         console.error('Error returning user search', name)
         return "";

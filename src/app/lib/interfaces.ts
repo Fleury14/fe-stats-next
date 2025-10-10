@@ -222,4 +222,10 @@ interface TLHead2HeadRace {
     }
 }
 
-export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, UserSearchResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse, TLHead2HeadRace }
+interface MatchupData {
+    wins1: number;
+    wins2: number;
+    ties: number;
+}
+
+export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, UserSearchResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse, TLHead2HeadRace, MatchupData }

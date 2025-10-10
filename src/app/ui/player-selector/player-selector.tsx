@@ -69,7 +69,7 @@ export default function PlayerSelector({ selectPlayer } : { selectPlayer: (playe
                         onChange={(e) => setUser2(e.target.value)} />
                     {results2.map((result, index) => {
                         if (index === 9) {
-                            return <p>...</p>
+                            return <p key="elipses2">...</p>
                         } else if (index < 9) {
                             return (
                                 <div key={result.id} className="ps-search-result">
