@@ -35,12 +35,15 @@ export default function MatchupData({ id1, id2}: {id1: string, id2: string}) {
                 <div className="flex justify-around">
                     <div className="flex flex-col">
                         <p>{parsedMatchup.wins1}</p>
+                        <p>{parsedMatchup.mov1.toFixed(2)}</p>
                     </div>
                     <div className="flex flex-col">
                         <p>Wins</p>
+                        <p>Average Margin of Victory</p>
                     </div>
                     <div className="flex flex-col">
                         <p>{parsedMatchup.wins2}</p>
+                        <p>{parsedMatchup.mov2.toFixed(2)}</p>
                     </div>
                 </div>
                 <div className="flex flex-col m-5 items-center">
