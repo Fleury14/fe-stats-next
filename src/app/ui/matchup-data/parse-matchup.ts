@@ -35,8 +35,6 @@ export default function ParseMatchupData({id1, id2, matchupData}: {id1: string, 
         
     })
 
-    console.log('mov arr', mov1Time, mov2Time);
-
     if (mov1Time.length) {
         const sum = mov1Time.reduce((acc, val) => acc + val, 0)
         mov1 = (sum / mov1Time.length);
