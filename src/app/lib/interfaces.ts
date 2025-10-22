@@ -226,6 +226,14 @@ interface MatchupData {
     wins1: number;
     wins2: number;
     ties: number;
+    mov1: number;
+    mov2: number;
+    snipe1: number;
+    snipe2: number;
+    sub51: number;
+    sub52: number;
+    fifteenplus1: number;
+    fifteenplus2: number;
 }
 
 export type { Leaderboard, LeaderboardResponse, CategoryData, Race, RecentRaceResponse, Entrant, User, PlayerRacesResponse, UserSearchResponse, ScheduleSheet, Schedule, PlayerDetailResponse, TLPlayerRaceResponse, TLHead2HeadRace, MatchupData }
