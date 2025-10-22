@@ -9,6 +9,12 @@ export default function ParseMatchupData({id1, id2, matchupData}: {id1: string, 
     let ties = 0;
     let mov1 = 0;
     let mov2 = 0;
+    let snipe1 = 0;
+    let snipe2 = 0;
+    let sub51 = 0;
+    let sub52 = 0;
+    let fifteenplus1 = 0;
+    let fifteenplus2 = 0;
     const mov1Time:number[] = [];
     const mov2Time:number[] = [];
 
@@ -23,12 +29,32 @@ export default function ParseMatchupData({id1, id2, matchupData}: {id1: string, 
             const e1Time = (+e1Finish[0] * 3600) + (+e1Finish[1] * 60) + Math.floor(+e1Finish[2]);
             const e2Time = (+e2Finish[0] * 3600) + (+e2Finish[1] * 60) + Math.floor(+e2Finish[2]);
             if (entrant1.placement < entrant2.placement) {
+                const diff = e2Time - e1Time;
                 wins1++;
-                mov1Time.push(e2Time - e1Time);
+                mov1Time.push(diff);
+                if (diff <= 20) {
+                    snipe1++;
+                }
+                if (diff <= 600) {
+                    sub51++;
+                }
+                if (diff > 900) {
+                    fifteenplus1++
+                }
             }
             if (entrant1.placement > entrant2.placement) {
+                const diff = e1Time - e2Time;
                 wins2++;
-                mov2Time.push(e1Time - e2Time);
+                mov2Time.push(diff);
+                if (diff <= 20) {
+                    snipe2++;
+                }
+                if (diff <= 600) {
+                    sub52++;
+                }
+                if (diff > 900) {
+                    fifteenplus2++
+                }
             }
             if (entrant1.placement === entrant2.placement) ties++;
         }
@@ -44,5 +70,5 @@ export default function ParseMatchupData({id1, id2, matchupData}: {id1: string, 
         mov2 = (sum / mov2Time.length);
     }
 
-    return { wins1, wins2, ties, mov1, mov2 }
+    return { wins1, wins2, ties, mov1, mov2, snipe1, snipe2, sub51, sub52, fifteenplus1, fifteenplus2 }
 }

@@ -32,19 +32,28 @@ export default function MatchupData({ id1, id2}: {id1: string, id2: string}) {
         const parsedMatchup = ParseMatchupData({ id1, id2, matchupData: results })
         return (
             <div>
-                <div className="text-center">Matchup Data</div>
+                <div className="text-center m-2 text-bold text-2xl text-yellow-200">Matchup Data</div>
                 <div className="flex justify-around">
                     <div className="flex flex-col">
                         <p>{parsedMatchup.wins1}</p>
                         <p>{secsToTime(parsedMatchup.mov1)}</p>
+                        <p>{parsedMatchup.snipe1}</p>
+                        <p>{parsedMatchup.sub51}</p>
+                        <p>{parsedMatchup.fifteenplus1}</p>
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-center">
                         <p>Wins</p>
                         <p>Average Margin of Victory</p>
+                        <p>Snipes</p>
+                        <p>Sub 5m difference</p>
+                        <p>&gt;15m difference</p>
                     </div>
                     <div className="flex flex-col">
                         <p>{parsedMatchup.wins2}</p>
                         <p>{secsToTime(parsedMatchup.mov2)}</p>
+                        <p>{parsedMatchup.snipe2}</p>
+                        <p>{parsedMatchup.sub52}</p>
+                        <p>{parsedMatchup.fifteenplus2}</p>
                     </div>
                 </div>
                 <div className="flex flex-col m-5 items-center">
