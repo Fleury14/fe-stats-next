@@ -1,9 +1,11 @@
 import './race-display.css';
 import { Entrant } from '@/app/lib/interfaces';
 import { parseRTTimeString } from '@/app/lib/helpers';
+import { Bangers } from 'next/font/google';
 
 export default function RaceDisplay({ id, info, status, entrants, open_time, start_time, author } : { id : string, info: string, status: { value: string, help_text: string, verbose_value: string}, entrants: Entrant[], open_time: string, start_time: string, author: string }) {
     
+    const bangers = Bangers({ subsets: ['latin'], weight: ['400'] });
     const feIndex = info.indexOf("https://ff4fe.");
     const alphaIndex = info.indexOf("https://alpha.ff4fe");
     const stringIndex = feIndex >= 0 ? feIndex : (alphaIndex >= 0 ? alphaIndex : -1);
@@ -61,13 +63,13 @@ export default function RaceDisplay({ id, info, status, entrants, open_time, sta
                     return (
                         <div key={entrant.user.name} className={`p-5 text-2xl flex justify-between items-center ${index % 2 > 0 ? "bg-slate-800" : ""}`}>
                             <div className="flex">
-                                <p className="bangers-regular results-place">{entrant.place_ordinal}</p>
+                                <p className={`${bangers.className} results-place`}>{entrant.place_ordinal}</p>
                                 <p className="race-cell">{entrant.user.name}</p>
                             </div>
                             <div>
-                                <p className='bangers-regular race-cell-mid'>{parseRTTimeString(entrant.finish_time)}</p>
+                                <p className={`${bangers.className} race-cell-mid`}>{parseRTTimeString(entrant.finish_time)}</p>
                             </div>
-                            <div className='flex bangers-regular race-cell-right justify-end'>
+                            <div className={`${bangers.className} flex race-cell-right justify-end`}>
                                 <p>{entrant.score || "unranked"}</p>
                                 {entrant.score_change && <p> -&gt; <span className={entrant.score_change < 0 ? 'text-red-500' : 'text-emerald-500' }>{entrant.score_change}</span></p>}
                             </div>
