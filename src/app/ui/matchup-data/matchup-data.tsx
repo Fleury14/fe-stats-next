@@ -6,7 +6,10 @@ import { useState, useEffect} from 'react';
 import ParseMatchupData from './parse-matchup';
 import Link from 'next/link';
 import { secsToTime } from '@/app/lib/helpers';
+import { Bangers } from 'next/font/google';
 import './matchup-data.css';
+
+const bangers = Bangers({ weight: ['400']});
 
 export default function MatchupData({ id1, id2}: {id1: string, id2: string}) {
 
@@ -36,29 +39,29 @@ export default function MatchupData({ id1, id2}: {id1: string, id2: string}) {
                 <div className="text-center m-2 text-bold text-2xl text-yellow-200">Matchup Data</div>
                 <div className="flex justify-around border-5 w-5/6 rounded-md flex-col">
                     <div className="flex justify-around p-5 bg-slate-700 items-center matchup-row">
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.wins1}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.wins1}</p>
                         <p className="text-xl w-1/3 text-center">Wins</p>
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.wins2}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.wins2}</p>
                     </div>
                     <div className="flex justify-around p-5 bg-slate-700 items-center matchup-row">
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{secsToTime(parsedMatchup.mov1)}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{secsToTime(parsedMatchup.mov1)}</p>
                         <p className="text-xl w-1/3 text-center">Average Margin of Victory</p>
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{secsToTime(parsedMatchup.mov2)}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{secsToTime(parsedMatchup.mov2)}</p>
                     </div>
                     <div className="flex justify-around p-5 bg-slate-700 items-center matchup-row">
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.snipe1}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.snipe1}</p>
                         <p className="text-xl w-1/3 text-center">Snipes</p>
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.snipe2}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.snipe2}</p>
                     </div>
                     <div className="flex justify-around p-5 bg-slate-700 items-center matchup-row">
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.sub51}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.sub51}</p>
                         <p className="text-xl w-1/3 text-center">Sub 5m difference</p>
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.sub52}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.sub52}</p>
                     </div>
                     <div className="flex justify-around p-5 bg-slate-700 items-center">
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.fifteenplus1}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.fifteenplus1}</p>
                         <p className="text-xl w-1/3 text-center">&gt;15m difference</p>
-                        <p className="bangers-regular text-5xl w-1/3 text-center">{parsedMatchup.fifteenplus2}</p>
+                        <p className={`${bangers.className} text-5xl w-1/3 text-center`}>{parsedMatchup.fifteenplus2}</p>
                     </div>
                 </div>
                 <div className="flex flex-col m-5 items-center">
