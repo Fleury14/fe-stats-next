@@ -1,6 +1,8 @@
 .race-results-container {
     width: 80%;
     margin-left: 10%;
+    border: 5px solid #aaa;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 500px) {
