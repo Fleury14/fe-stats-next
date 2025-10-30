@@ -1,6 +1,9 @@
 import './race-display.css';
 import { Entrant } from '@/app/lib/interfaces';
 import { parseRTTimeString } from '@/app/lib/helpers';
+import { Bangers } from 'next/font/google';
+
+const bangers = Bangers({ subsets: ['latin'], weight: ['400'] });
 
 export default function RaceDisplay({ id, info, status, entrants, open_time, start_time, author } : { id : string, info: string, status: { value: string, help_text: string, verbose_value: string}, entrants: Entrant[], open_time: string, start_time: string, author: string }) {
     
@@ -53,21 +56,23 @@ export default function RaceDisplay({ id, info, status, entrants, open_time, sta
             ) : (
                 <p className="text-center mt-3 text-xl">{info}</p>    
             )}
+            <div className="flex justify-center m-3">
+                <p className={`w-1/4 text-center p-3 text-2xl ${color}`}>Status: {status.verbose_value}</p>
+            </div>
             <div className="race-results-container mt-10">
-                <p className={color}>{status.verbose_value}</p>
                 {entrants.map((entrant, index) => {
                     return (
-                        <div key={entrant.user.name} className={`flex justify-between items-center text-lg ${index % 2 > 0 ? "bg-slate-800" : ""}`}>
+                        <div key={entrant.user.name} className={`p-5 text-2xl flex justify-between items-center ${index % 2 > 0 ? "bg-slate-800" : ""}`}>
                             <div className="flex">
-                                <p className="font-bold text-lg results-place">{entrant.place_ordinal}</p>
+                                <p className={`${bangers.className} results-place`}>{entrant.place_ordinal}</p>
                                 <p className="race-cell">{entrant.user.name}</p>
                             </div>
                             <div>
-                                <p className='race-cell-mid'>{parseRTTimeString(entrant.finish_time)}</p>
+                                <p className={`${bangers.className} race-cell-mid`}>{parseRTTimeString(entrant.finish_time)}</p>
                             </div>
-                            <div className='flex race-cell-right justify-end'>
+                            <div className={`${bangers.className} flex race-cell-right justify-end`}>
                                 <p>{entrant.score || "unranked"}</p>
-                                {entrant.score_change && <p> -&gt; {entrant.score_change}</p>}
+                                {entrant.score_change && <p> -&gt; <span className={entrant.score_change < 0 ? 'text-red-500' : 'text-emerald-500' }>{entrant.score_change}</span></p>}
                             </div>
                                  
                         </div>
