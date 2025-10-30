@@ -9,7 +9,7 @@ import { secsToTime } from '@/app/lib/helpers';
 import { Bangers } from 'next/font/google';
 import './matchup-data.css';
 
-const bangers = Bangers({ weight: ['400']});
+const bangers = Bangers({ subsets: ['latin'], weight: ['400']});
 
 export default function MatchupData({ id1, id2}: {id1: string, id2: string}) {
 
