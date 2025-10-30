@@ -3,9 +3,10 @@ import { Entrant } from '@/app/lib/interfaces';
 import { parseRTTimeString } from '@/app/lib/helpers';
 import { Bangers } from 'next/font/google';
 
+const bangers = Bangers({ subsets: ['latin'], weight: ['400'] });
+
 export default function RaceDisplay({ id, info, status, entrants, open_time, start_time, author } : { id : string, info: string, status: { value: string, help_text: string, verbose_value: string}, entrants: Entrant[], open_time: string, start_time: string, author: string }) {
     
-    const bangers = Bangers({ subsets: ['latin'], weight: ['400'] });
     const feIndex = info.indexOf("https://ff4fe.");
     const alphaIndex = info.indexOf("https://alpha.ff4fe");
     const stringIndex = feIndex >= 0 ? feIndex : (alphaIndex >= 0 ? alphaIndex : -1);
