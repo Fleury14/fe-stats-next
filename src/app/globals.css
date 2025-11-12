@@ -33,3 +33,8 @@ body {
 .w-80-pct {
   width: 80%;
 }
+
+.loading-box {
+  height: calc(100vh - 96px);
+  width: 100%;
+}
